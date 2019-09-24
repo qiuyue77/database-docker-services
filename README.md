@@ -21,7 +21,7 @@ docker-compose up -d
 ```bash
 docker-compose exec mysql mysql -p  # 登录 mysql
 ```
-#### 输入数据库 root 密码
+#### 输入数据库 密码
 
 #### 新建mysql数据库 xxx 并退出
 ```
