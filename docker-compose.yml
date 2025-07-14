@@ -2,7 +2,7 @@ version: "3"
 services:
   # mysql
   mysql:
-    image: mysql:5.7.17
+    image: mysql:9.3.0
     restart: always
     container_name: product_mysql
     volumes:
@@ -11,7 +11,7 @@ services:
     ports:
         - 3306:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=password
+      MYSQL_ROOT_PASSWORD: PASSWORD
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
   # redis
@@ -21,4 +21,19 @@ services:
     image: redis:latest
     ports:
         - 6379:6379
+    restart: always
+
+  # PostgreSQL
+  postgres:
+    image: postgres:16.9  # 
+    container_name: product_pgsql
+    environment:
+      POSTGRES_USER: admin      # 自定义超级用户（默认用户为postgres）
+      POSTGRES_PASSWORD: PASSWORD # 密码
+      POSTGRES_DB: mydb         # 默认创建的数据库
+    volumes:
+      - ./data/pg_data:/var/lib/postgresql/data  # 数据持久化
+    ports:
+      - "5432:5432"            # 默认端口映射
+    network_mode: bridge
     restart: always

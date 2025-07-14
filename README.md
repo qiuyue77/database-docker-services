@@ -6,18 +6,18 @@ docker-services about database
 ```bash
 git clone https://github.com/qiuyue77/database-docker-services.git
 ```
-#### 进入项目并新建目录data/mysql
+#### 进入项目并新建目录data/mysql & data/pg_data
 
 ```bash
-cd database-docker-services && mkdir -p data/mysql
+cd database-docker-services && mkdir -p data/mysql && mkdir -p data/pg_data
 ```
-#### 编辑 docker-compose.yml 修改数据库 密码(password)
+#### 编辑 docker-compose.yml 修改数据库 密码(password)--- mysql 和 postgreSQL的密码
 
 #### 启动数据库docker容器
 ```bash
 docker-compose up -d
 ```
-#### 进入docker容器
+#### 进入myxsql-docker容器
 ```bash
 docker-compose exec mysql mysql -p  # 登录 mysql
 ```
