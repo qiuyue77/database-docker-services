@@ -17,7 +17,7 @@ cd database-docker-services && mkdir -p data/mysql && mkdir -p data/pg_data
 ```bash
 docker-compose up -d
 ```
-#### 进入myxsql-docker容器
+### 进入myxsql-docker容器 创建一个mysql数据库
 ```bash
 docker-compose exec mysql mysql -p  # 登录 mysql
 ```

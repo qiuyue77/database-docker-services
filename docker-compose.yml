@@ -12,6 +12,9 @@ services:
         - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: PASSWORD
+      MYSQL_DATABASE: mysqldb
+      MYSQL_USEr: jqiu
+      MYSQL_PASSWORD: PASSWORD
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
   # redis
